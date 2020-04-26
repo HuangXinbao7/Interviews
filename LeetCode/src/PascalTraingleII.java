@@ -20,22 +20,25 @@ public class PascalTraingleII {
 
     public static void main(String[] args) {
 
-        List<Integer> row = getRow(3);
+        List<Integer> row = getRow(33);
         System.out.println(row);
     }
 
 
+    /**
+     * 方法一
+     */
     public static List<Integer> getRow(int rowIndex) {
         List<Integer> pre = new ArrayList<>();
         List<Integer> cur = new ArrayList<>();
 
         for (int i = 0; i <= rowIndex; i++) {
             cur = new ArrayList<>();
-            for (int j = 0; i <= i; j++) {
+            for (int j = 0; j <= i; j++) {
                 if (j == 0 || j == i) {
                     cur.add(1);
                 }else {
-                    cur.add(pre.get(j - 1) + pre.get(i));
+                    cur.add(pre.get(j - 1) + pre.get(j));
                 }
             }
             pre = cur;
