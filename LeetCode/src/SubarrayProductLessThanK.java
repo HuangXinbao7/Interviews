@@ -22,15 +22,16 @@ public class SubarrayProductLessThanK {
     public static void main(String[] args) {
 
         int[] nums = new int[]{10, 5, 2, 6};
+        //int k = 100;
 
-        int[] bigNums = new int[50000];
-        for(int i = 0; i < bigNums.length; i++) {
-            bigNums[i] = 1;
+        // 随机的长度和k
+        int[] randNums = new int[1 + (int)(Math.random() * 50000)];
+        for(int i = 0; i < randNums.length; i++) {
+            randNums[i] = (int)(1 + Math.random() * 999);
         }
+        int k = (int)(Math.random() * 1000000);
 
-        int k = 100;
-
-        int i = numSubarrayProductLessThanK(bigNums, k);
+        int i = numSubarrayProductLessThanK(randNums, k);
         System.out.println(i);
     }
 
@@ -61,6 +62,21 @@ public class SubarrayProductLessThanK {
         for(int right = 0; right < nums.length; right++) {
             now *= nums[right];
             while (now >= k) now /= nums[left++];
+
+            /*
+            * 关键是知道这个等式怎么来的
+            * right左边的元素均已经考虑了所有的组合, 所以只要考虑含right的组合
+            * 显然含right的组合数刚好是子数组的长度
+            * 举个例子：[...5,6,3,4,8,...]
+            * 假设right遍历到了数值8的位置, left经过摘除后移到了数值5处
+            * 此时所有的组合情况是:
+            * [56348]
+            * [6348]
+            * [348]
+            * [48]
+            * [8]
+            * 共5种
+            * */
             times += right - left + 1;
         }
         return times;
