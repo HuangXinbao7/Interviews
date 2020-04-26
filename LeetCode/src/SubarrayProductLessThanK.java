@@ -25,5 +25,9 @@ public class SubarrayProductLessThanK {
 
     public static void main(String[] args) {
         System.out.println("HHHH");
+        System.out.println("HHHH");
+        System.out.println("HHHH");
+
+
     }
 }
