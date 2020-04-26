@@ -20,16 +20,14 @@ public class SearchInsertPosition {
     }
 
     public static int searchInsert(int[] nums, int target) {
-        int ins = -1;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == target) {
+        int ins = 0;
+        for (int i = nums.length - 1; i > -1; i--) {
+            if (target == nums[i]) {
                 ins = i;
-            }else if (nums[i] < target) {
-                i++;
-            } else if (nums[i] > target){
-                return i - 1;
+            } else if(target > nums[i]) {
+                return ins = i + 1;
             } else {
-                return i;
+                i--;
             }
         }
         return ins;
