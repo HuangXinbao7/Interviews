@@ -11,6 +11,12 @@ public class ImplementstrStr {
     }
 
 
+    /**
+     * 未完成
+     * @param haystack
+     * @param needle
+     * @return
+     */
     public static int strStr(String haystack, String needle) {
 
         for (int i = 0; i < haystack.length() - needle.length(); i++) {
@@ -18,8 +24,6 @@ public class ImplementstrStr {
                 return i;
             }
         }
-
-
 
         return -1;
     }
