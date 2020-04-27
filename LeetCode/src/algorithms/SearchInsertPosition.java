@@ -9,27 +9,26 @@ public class SearchInsertPosition {
 
     public static void main(String[] args) {
 
-         //int[] nums = new int[]{1,3,5,6};
          int[] nums = new int[]{1,3,5,6};
-         int target = 6;
-
-
+         int target = 7;
 
         int i = searchInsert(nums, target);
         System.out.println(i);
     }
 
+    /**
+     *
+     */
     public static int searchInsert(int[] nums, int target) {
-        int ins = 0;
-        for (int i = nums.length - 1; i > -1; i--) {
+        for (int i = nums.length - 1; i > -1;) {
             if (target == nums[i]) {
-                ins = i;
+                return i;
             } else if(target > nums[i]) {
-                return ins = i + 1;
+                return i + 1;
             } else {
                 i--;
             }
         }
-        return ins;
+        return 0;
     }
 }
