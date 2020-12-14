@@ -8,7 +8,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Demo" />
         <module name="LeetCode" />
-        <module name="Interviews" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
