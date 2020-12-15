@@ -11,9 +11,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Demo" target="1.5" />
-      <module name="Interviews" target="1.5" />
-      <module name="LeetCode" target="1.5" />
+      <module name="Demo" target="1.8" />
+      <module name="Interviews" target="1.8" />
+      <module name="LeetCode" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
